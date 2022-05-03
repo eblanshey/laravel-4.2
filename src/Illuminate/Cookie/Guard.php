@@ -69,6 +69,10 @@ class Guard implements HttpKernelInterface {
 			{
 				$request->cookies->set($key, null);
 			}
+			catch (\ErrorException $e)
+			{
+				$request->cookies->set($key, null);
+			}
 		}
 
 		return $request;
